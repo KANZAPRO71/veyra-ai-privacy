@@ -3,57 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071327" />
     <title>Kebijakan Privasi — Veyra AI</title>
-    <style>
-      body { margin: 0; background: #f4f7fb; color: #172033; font: 16px/1.6 "Segoe UI", sans-serif; }
-      main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
-      h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
-      h2 { font-size: 20px; margin: 28px 0 8px; }
-      p, li { margin: 0 0 10px; }
-      a { color: #1d4ed8; }
-      .meta { color: #52627a; }
-    </style>
+    <style>body{margin:0;background:#071327;color:#e2e8f0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65}main{max-width:760px;margin:0 auto;padding:36px 20px 64px}h1{color:#f5c96a;font-size:28px;margin:0 0 8px}h2{color:#6ce0c1;font-size:18px;margin:28px 0 8px;border-bottom:1px solid rgba(245,201,106,.2);padding-bottom:6px}p,li{font-size:15px;color:#cbd5e1}ul{padding-left:20px}li{margin-bottom:8px}a{color:#7dd3fc}.privacy-meta{color:#94a3b8;font-size:13px;margin-bottom:20px}code{background:rgba(148,163,184,.16);padding:2px 6px;border-radius:6px;font-size:13px}</style>
   </head>
-  <body>
-    <main>
+  <body class="privacy-page">
+    <main class="privacy-main">
       <h1>Kebijakan Privasi Veyra AI</h1>
-      <p class="meta">Terakhir diperbarui: 27 September 2026</p>
-      <p>Kebijakan ini berlaku untuk aplikasi Android <strong>Veyra AI</strong> (nama paket <strong>com.veyra.ai</strong>). Aplikasi ini gratis. Pengembangnya adalah pemilik akun GitHub <a href="https://github.com/KANZAPRO71">KANZAPRO71</a>. Veyra AI tidak menyediakan akun pengguna sendiri.</p>
+      <p class="privacy-meta">Terakhir diperbarui: 25 November 2026</p>
+      <p>Kebijakan ini berlaku untuk aplikasi Android <strong>Veyra AI</strong> (nama paket <strong>com.veyra.ai.app</strong>). Aplikasi ini gratis. Pengembangnya adalah pemilik akun GitHub <a href="https://github.com/KANZAPRO71">KANZAPRO71</a>. Veyra AI tidak menyediakan akun pengguna sendiri.</p>
 
       <h2>Data yang diproses</h2>
       <ul>
-        <li><strong>Mikrofon.</strong> Saat Anda menekan Mulai pada sesi langsung, aplikasi merekam suara dari mikrofon.</li>
+        <li><strong>Mikrofon.</strong> Saat Anda menekan Mulai pada sesi langsung (Talk, Companion, Whisper, Budget, atau Trip Concierge), aplikasi merekam suara dari mikrofon.</li>
+        <li><strong>Kamera &amp; Foto.</strong> Saat Anda membuka Terjemahan Kamera, Food Vision, Scan Struk Budget, atau Travel Vault, kamera/foto digunakan untuk membaca teks, menu, struk belanja, atau tiket perjalanan. Gambar hanya diproses sesuai permintaan Anda; foto struk/tiket yang Anda simpan tetap berada secara lokal di perangkat Anda.</li>
+        <li><strong>Lokasi (GPS).</strong> Saat Anda membuka tab Spots atau meminta lokasi terkini pada mode Companion/Trip, aplikasi membaca koordinat GPS perangkat untuk menampilkan tempat terdekat, rute navigasi, dan informasi lokasi lokal secara akurat. Data lokasi tidak dijual dan tidak disimpan di server pengembang.</li>
         <li><strong>Teks percakapan.</strong> Ucapan yang dikenali dan balasan sesi dikirim sebagai bagian dari sesi langsung.</li>
-        <li><strong>Kunci Gemini.</strong> Kunci API yang Anda simpan di Pengaturan disimpan di perangkat ini.</li>
-        <li><strong>Preferensi di perangkat.</strong> Bahasa tampilan, bahasa percakapan, suara, kecepatan bicara, frasa tersimpan, dan riwayat yang ada di aplikasi disimpan di penyimpanan lokal perangkat.</li>
+        <li><strong>Kunci Gemini.</strong> Kunci API yang Anda simpan di Pengaturan disimpan secara terenkripsi di perangkat ini (<code>EncryptedSharedPreferences</code>).</li>
+        <li><strong>Preferensi &amp; data di perangkat.</strong> Bahasa, suara, frasa tersimpan, anggaran perjalanan, itinerary, dokumen Travel Vault, dan riwayat percakapan disimpan di penyimpanan lokal perangkat.</li>
+        <li><strong>Analitik instalasi anonim.</strong> Pada build rilis produksi Android, aplikasi mencatat penghitung instalasi agregat secara anonim (menggunakan hash satu arah SHA-256 non-personal) melalui Firebase untuk mengetahui jumlah unduhan aplikasi. Tidak ada nama, email, lokasi, atau isi percakapan yang dikirim ke analitik.</li>
       </ul>
 
       <h2>Cara data digunakan</h2>
-      <p>Suara dan teks dipakai hanya untuk menjalankan fitur yang Anda buka: terjemahan langsung di Live Talk, percakapan di Companion, atau jawaban singkat di Whisper. Kunci Gemini dipakai agar perangkat Anda dapat tersambung ke layanan Gemini. Preferensi dipakai agar pilihan Anda tetap ada saat aplikasi dibuka lagi.</p>
+      <p>Suara, teks, gambar, dan lokasi GPS dipakai hanya untuk menjalankan fitur yang Anda buka: terjemahan langsung di Live Talk, percakapan di Companion, jawaban singkat di Whisper, rekomendasi sekitar di Spots, pemindaian struk/makanan, serta perencanaan perjalanan di Trip. Kunci Gemini dipakai agar perangkat Anda dapat tersambung langsung ke layanan Google Gemini.</p>
 
       <h2>Dengan siapa data dibagikan</h2>
-      <p>Selama sesi langsung aktif, audio dan teks dikirim dari perangkat Anda ke <strong>Google Gemini API</strong> (<a href="https://generativelanguage.googleapis.com">generativelanguage.googleapis.com</a>) memakai kunci API Anda. Pemrosesan itu tunduk pada <a href="https://policies.google.com/privacy">Kebijakan Privasi Google</a> dan <a href="https://ai.google.dev/gemini-api/terms">ketentuan Gemini API</a>.</p>
-      <p>Veyra AI tidak mengoperasikan server sendiri untuk aplikasi Android ini, tidak menjual data Anda, dan tidak membagikan data itu kepada pihak lain selain Google untuk sesi langsung tersebut.</p>
+      <p>Selama sesi aktif, audio, teks, atau gambar yang Anda pindai dikirim dari perangkat Anda ke <strong>Google Gemini API</strong> (<a href="https://generativelanguage.googleapis.com">generativelanguage.googleapis.com</a>). Koordinat GPS untuk pencocokan nama kota &amp; peta dapat diakses ke layanan geokode/peta (OpenStreetMap Nominatim/Overpass, BigDataCloud, atau Google Places bila diaktifkan), kurs mata uang ke Frankfurter API, serta prakiraan cuaca kota tujuan ke Open-Meteo API. Pemrosesan layanan Google tunduk pada <a href="https://policies.google.com/privacy">Kebijakan Privasi Google</a> dan <a href="https://ai.google.dev/gemini-api/terms">ketentuan Gemini API</a>.</p>
+      <p>Veyra AI tidak menjual data Anda dan tidak membagikan percakapan pribadi Anda kepada pihak lain.</p>
 
       <h2>Penyimpanan dan penghapusan</h2>
-      <p>Kunci API, preferensi, frasa, dan riwayat tetap di perangkat. Data itu tidak diunggah ke server Veyra. Anda dapat menghapusnya dengan membersihkan data aplikasi di setelan Android, atau dengan menghapus aplikasi.</p>
+      <p>Kunci API, preferensi, frasa, catatan dompet, tiket Travel Vault, itinerary, dan riwayat tetap di perangkat Anda. Anda dapat menghapus semuanya kapan saja dengan membersihkan data aplikasi di setelan Android, atau dengan menghapus instalasi aplikasi.</p>
 
       <h2>Izin perangkat</h2>
-      <p>Aplikasi meminta internet agar sesi langsung dapat tersambung, dan mikrofon agar dapat mendengar ucapan Anda. Izin mikrofon hanya dipakai ketika Anda memulai sesi. Aplikasi juga memakai izin audio Android yang diperlukan untuk memutar balasan suara.</p>
+      <p>Aplikasi meminta izin <strong>kamera</strong> (memindai teks, menu, struk, dan tiket), <strong>mikrofon</strong> (sesi suara langsung), <strong>lokasi GPS</strong> (radar Spots &amp; konteks lokasi Companion), dan <strong>internet</strong> (koneksi layanan AI, kurs mata uang, dan peta). Izin sensitif hanya aktif saat Anda menggunakan fitur terkait.</p>
 
       <h2>Anak-anak</h2>
-      <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah 13 tahun, dan tidak dengan sengaja mengumpulkan data dari anak-anak.</p>
+      <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah 13 tahun, dan tidak dengan sengaja mengumpulkan data pribadi dari anak-anak.</p>
 
-      <h2>Perubahan</h2>
-      <p>Jika kebijakan ini berubah, tanggal di bagian atas halaman akan diperbarui. Versi publik halaman ini ada di <a href="https://kanzapro71.github.io/veyra-ai-privacy/">https://kanzapro71.github.io/veyra-ai-privacy/</a>.</p>
-
-      <h2>Kontak</h2>
-      <p>Pertanyaan privasi dapat dikirim lewat <a href="https://github.com/KANZAPRO71/veyra-ai-privacy/issues">GitHub Issues</a> pada repositori kebijakan ini.</p>
+      <h2>Perubahan &amp; Kontak</h2>
+      <p>Versi publik halaman ini ada di <a href="https://kanzapro71.github.io/veyra-ai-privacy/">https://kanzapro71.github.io/veyra-ai-privacy/</a>. Pertanyaan privasi dapat dikirim lewat <a href="https://github.com/KANZAPRO71/veyra-ai-privacy/issues">GitHub Issues</a>.</p>
 
       <h2>English</h2>
-      <p>Veyra AI (package <strong>com.veyra.ai</strong>) is a free Android app published by the owner of the GitHub account KANZAPRO71. The app has no Veyra user account.</p>
-      <p>When you start a live session, microphone audio and conversation text are sent from your device to the Google Gemini API using the Gemini API key you save in Settings. That key, along with language, voice, saved phrases, and on-device history, stays in local storage on your device. Veyra does not run its own server for this Android app, does not sell your data, and does not share it with anyone other than Google for that live session. Google's handling of the session is covered by Google's privacy policy and the Gemini API terms.</p>
-      <p>You can remove on-device data by clearing the app's storage or uninstalling it. The app is not directed at children under 13. Privacy questions: <a href="https://github.com/KANZAPRO71/veyra-ai-privacy/issues">GitHub Issues</a>.</p>
+      <p>Veyra AI (package <strong>com.veyra.ai.app</strong>) is a free Android app published by the owner of the GitHub account KANZAPRO71. The app has no Veyra user account.</p>
+      <p>When you start a live session, microphone audio, text, or scanned images (camera translation, food menu, receipts, or travel tickets) are sent from your device to the Google Gemini API. Device GPS location (<code>ACCESS_FINE_LOCATION</code>) is used exclusively to discover nearby places in Spots, fill your current city in Trip, and answer location queries in Companion; coordinates may be sent to mapping/geocoding services (OpenStreetMap/BigDataCloud or optional Google Places) strictly to resolve place names and nearby POIs. On production Android release builds, an anonymized one-way hashed install counter is sent to Firebase solely to track aggregate app downloads with zero personal data. Your API key (stored via Android EncryptedSharedPreferences), preferences, saved phrases, budget ledger, itineraries, Travel Vault documents, and history remain locally on your device. Veyra does not sell your data.</p>
+      <p>You can remove all on-device data by clearing the app's storage or uninstalling it. The app is not directed at children under 13. Privacy questions: <a href="https://github.com/KANZAPRO71/veyra-ai-privacy/issues">GitHub Issues</a>.</p>
     </main>
   </body>
 </html>
